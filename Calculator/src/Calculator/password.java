@@ -19,12 +19,12 @@ public class password extends Calculator {
 		cal01.setSize(800, 800);
 		cal01.setVisible(true);
 		cal01.setResizable(false);
-		cal01.remove(jp1);
+		cal01.remove(jp1);//一開始先執行密碼頁面
 		cal01.add(jp2);
 		jp2.add(pswd01);
 		pswd01.setSize(300, 300);
 		pswd01.setLocation(200, 50);
-		pswd01.setFont(new Font("標楷體", Font.BOLD, 24));
+		pswd01.setFont(new Font("標楷體", Font.BOLD, 24));//設定字體大小 自型
 		jp2.add(pswdin);
 		pswdin.setSize(300, 100);
 		pswdin.setLocation(200, 300);
@@ -36,27 +36,26 @@ public class password extends Calculator {
 		jtf2.setSize(100, 50);
 		jtf2.setLocation(300, 600);
 	}
-	
+	//判斷密碼是否輸入正確
 		boolean validatePassword( char ps[], char passwordc[] ){
 	       
-        // if the first password's length is different from the second password,
-        // return false.
+      
         if( ps.length != passwordc.length ) {
             return false;
         }
-        // two passwords have the same string length.
+        
         else {
             for( int i = 0; i < ps.length; ++i ) {
                 if( ps[ i ] != passwordc[ i ] ) {
                     return false;
                 }
             }
-        } // end if
+        }
        
-        // These two inputs are the same string, return true.
+       
         return true;    }
 
-
+//OK鍵的事件
 	public void actionPerformed(ActionEvent e) {
 	if (e.getSource() == ok){
 			char ps[] = pswdin.getPassword();
